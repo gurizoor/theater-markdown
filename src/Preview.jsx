@@ -32,7 +32,7 @@ export default function Preview({ parsedData }) {
     <div className="preview-container">
       {parsedData.scenes.map((scene, sceneIndex) => (
         <div key={sceneIndex} className="scene">
-          <h2 className="scene-title">🎭 {scene.title}</h2>
+          <h2 className="scene-title">{scene.title}</h2>
           
           {scene.characters.length > 0 && (
             <div className="characters">
@@ -54,7 +54,7 @@ export default function Preview({ parsedData }) {
 
           {scene.actions.map((action, actionIndex) => (
             <div key={actionIndex} className="action">
-              📝 <em>{action}</em>
+              <em>{action}</em>
             </div>
           ))}
 

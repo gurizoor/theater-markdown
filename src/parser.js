@@ -29,10 +29,18 @@ export function parseScript(text) {
       continue;
     }
 
-    // 登場人物定義
+    // 登場人物定義（【登場人物】または @ で始まる）
     if (line.startsWith('【登場人物】')) {
       if (currentScene) {
         const chars = line.substring('【登場人物】'.length).split('、');
+        currentScene.characters = chars.map(c => c.trim()).filter(c => c);
+      }
+      continue;
+    }
+
+    if (line.startsWith('@')) {
+      if (currentScene) {
+        const chars = line.substring(1).trim().split(/\s+/);
         currentScene.characters = chars.map(c => c.trim()).filter(c => c);
       }
       continue;
@@ -62,12 +70,9 @@ export function parseScript(text) {
       let character = dialogueMatch[1].trim();
       const text = dialogueMatch[2].trim();
 
-      console.log('セリフ解析:', character, 'text:', text, 'shortcuts:', shortcuts);
-
       // ショートカット番号なら名前に変換
       if (shortcuts[character]) {
         character = shortcuts[character];
-        console.log('ショートカット変換:', character);
       }
 
       currentScene.dialogues.push({
