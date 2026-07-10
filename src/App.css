@@ -162,6 +162,36 @@ body {
   font-style: italic;
 }
 
+.global-stats {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.global-stats h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.global-stats-content {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.global-stats .stat-item {
+  color: #ecf0f1;
+}
+
+.global-stats .stat-item.total {
+  font-weight: bold;
+  color: #3498db;
+}
+
 .scene {
   margin-bottom: 2rem;
   padding-bottom: 2rem;
@@ -178,6 +208,26 @@ body {
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid #3498db;
+}
+
+.scene-stats {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  color: #666;
+}
+
+.stat-item.total {
+  font-weight: bold;
+  color: #2c3e50;
 }
 
 .characters {
@@ -210,6 +260,16 @@ body {
   border-radius: 2px;
   color: #666;
   font-style: italic;
+  position: relative;
+}
+
+.action .char-count {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.75rem;
+  color: #999;
+  font-style: normal;
 }
 
 .dialogue {
@@ -235,6 +295,15 @@ body {
   border-left: 4px solid;
   border-radius: 4px;
   line-height: 1.6;
+  position: relative;
+}
+
+.dialogue-text .char-count {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.75rem;
+  color: #999;
 }
 
 .help-button {
